@@ -28,7 +28,9 @@ class Scraper:
 
     @staticmethod
     def __parser_a(snippet) -> dict:
-        return {snippet.string.strip(): snippet.get('href')}
+        if snippet.string:
+            return {snippet.string.strip(): snippet.get('href')}
+        return {snippet.string: snippet.get('href')}
 
     @staticmethod
     def __get_html(response: requests.Response) -> str:
@@ -45,12 +47,16 @@ class Scraper:
         self._result_dict = {'title': soup.title.string}
         for tag in self._tags:
             self._result_dict[tag] = []
-            for found in soup.find_all(tag):
-                if found and found.string:
-                    if tag == "a":
-                        self._result_dict[tag].append(self.__parser_a(found))
+            html_dump = soup.findAll(tag)
+            for found in html_dump:
+                if tag == 'a':
+                    anchor = self.__parser_a(found)
+                    if list(anchor.values())[0]:
+                        self._result_dict[tag].append(anchor)
                     else:
-                        self._result_dict[tag].append(found.string.strip())
+                        continue
+                else:
+                    self._result_dict[tag].append(found.getText())
 
     def run_parser(self, url: str) -> bool:
         response = self.__get_response(url)
