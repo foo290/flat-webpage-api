@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('api/', views.get_parsed),
+    path('api/', views.flatten_web),
 ]
