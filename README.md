@@ -1,5 +1,5 @@
 # flat-webpage-api
-given an url, will return json 
+give a url, get a json 
 
 ## API Request
 
@@ -8,13 +8,42 @@ given an url, will return json
 http://127.0.0.1:8000/api
 ```
 
-**Input format**
+**Request format**
 
 ```
 {
   "url": "any url here"
 }
 ```
+
+**Response format**
+
+```
+{
+  "title": "...",
+  "h1": [
+    ...
+  ],
+  "h2": [
+    ...  
+  ]
+  
+  ...
+}
+```
+
+
+### Example:
+
+**Request**
+
+```
+{
+  "url": "https://en.wikipedia.org/wiki/Machine_learning"
+}
+```
+
+
 **Response:**
 ```
 HTTP 200 OK
