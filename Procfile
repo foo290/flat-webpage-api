@@ -1,1 +1,1 @@
-web: gunicorn dusk.wsgi
+web: gunicorn web_flat/web_flat.wsgi
