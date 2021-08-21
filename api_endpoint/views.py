@@ -22,8 +22,7 @@ def flatten_web(request, **kwargs):
         "url": "https://www.github.com"
     }
     """
-    valid = kwargs.get('valid')
-    if valid:
+    if request.data:
         link = request.data['url']
         scraper = Scraper()
         scraper.run_parser(link)
