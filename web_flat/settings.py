@@ -127,9 +127,9 @@ RENDER_CLASSES = [
     'rest_framework.renderers.JSONRenderer',
 ]
 
-if DEBUG:
+# if DEBUG:
     # Browsable API's GUI is only visible in debug mode
-    RENDER_CLASSES.append('rest_framework.renderers.BrowsableAPIRenderer')
+RENDER_CLASSES.append('rest_framework.renderers.BrowsableAPIRenderer')
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': RENDER_CLASSES,
