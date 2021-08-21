@@ -9,7 +9,7 @@ from .utils import validate_url
 # Create your views here.
 
 @api_view(['POST'])
-@validate_url
+# @validate_url
 def flatten_web(request, **kwargs):
     """
     Send a post request in format like this:
