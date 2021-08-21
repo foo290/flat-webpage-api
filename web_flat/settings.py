@@ -25,7 +25,7 @@ SECRET_KEY = 'hadg6daw87e2312rz6rBBR6UB87Y45W34TG293GYBEJSDJEHT'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["flatweb.herokuapp.com", '127.0.0.1', 'localhost']
 
 # Application definition
 
